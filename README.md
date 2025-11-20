@@ -1,3 +1,110 @@
+# Turf Bila Worry – Team Setup & Work Distribution
+
+## 1. Project Setup (All Collaborators)
+- Clone the new repository.
+- Copy all files from the current project into the new repo folder.
+- Run:
+	```bash
+	composer install
+	npm install && npm run build
+	cp .env.example .env
+	php artisan key:generate
+	```
+- Update `.env` with your local database credentials:
+	```
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=your_db_name
+	DB_USERNAME=your_db_user
+	DB_PASSWORD=your_db_password
+	```
+- Create a local MySQL database with the name you set above.
+- Run migrations:
+	```bash
+	php artisan migrate
+	```
+- (Optional) Seed the database:
+	```bash
+	php artisan db:seed
+	```
+- Start the server:
+	```bash
+	php artisan serve
+	```
+
+## 2. Work Distribution & File Responsibilities
+
+### Mitchell & Yvonne – Backend Development
+- **User Authentication:**  
+	Files: `app/Http/Controllers/Auth/`, `resources/views/auth/`, `app/Models/User.php`, `database/migrations/*users*`
+- **Booking Flow:**  
+	Files: `app/Http/Controllers/BookingController.php`, `app/Models/Booking.php`, `database/migrations/*bookings*`, `resources/views/bookings.blade.php`
+- **Payment Integration (Mobile Money):**  
+	Files: `app/Http/Controllers/PaymentController.php`, `app/Models/Payment.php`, `database/migrations/*payments*`, `resources/views/payments.blade.php`
+- **Push:** All backend logic, migrations, and related Blade views.
+
+### Mahir & Kisiwani – Frontend Development
+- **UI/UX for Web:**  
+	Files: `resources/views/home.blade.php`, `resources/views/turfs.blade.php`, `resources/views/layouts/`, `public/css/app.css`, `resources/js/app.js`
+- **Search / Listing / Availability Display:**  
+	Files: `app/Http/Controllers/TurfController.php`, `app/Models/Turf.php`, `resources/views/turfs.blade.php`
+- **Push:** All frontend Blade views, CSS, JS, and UI components.
+
+### Lyon – Testing, Database, Deployment
+- **Unit Testing & Usability Testing:**  
+	Files: `tests/Unit/`, `tests/Feature/`, `phpunit.xml`
+- **Database Integration:**  
+	Files: `database/migrations/`, `database/seeders/`, `app/Models/`
+- **Performance & Reliability:**  
+	Files: `config/`, `app/Providers/`
+- **Deployment & Maintenance Plan:**  
+	Files: `README.md` (add deployment steps), `public/.htaccess`, `artisan`, `composer.json`, `package.json`
+- **Push:** All test files, seeders, deployment scripts, and documentation.
+
+## 3. Branching & Commit Messages
+
+- Use feature branches named after your task (e.g., `feature/auth-backend`, `feature/ui-frontend`, `feature/testing`).
+- Only push the files you are responsible for (see above).
+- Make regular, meaningful commits with clear messages.
+- After finishing your part, open a pull request for review.
+
+### Example Commit Messages
+
+| Team Member         | Example Commit Message                       |
+|---------------------|----------------------------------------------|
+| Mitchell & Yvonne   | "Add user authentication and booking logic"  |
+| Mahir & Kisiwani    | "Implement frontend UI and turf listing"     |
+| Lyon               | "Add unit tests and seeders for database"    |
+
+## 4. Rubric Coverage Checklist
+
+- **Laravel Setup:**  
+	`.env.example`, `.env`, `composer.json`, `package.json`, `artisan`, `config/`
+- **GitHub Collaboration:**  
+	Commit regularly, use descriptive messages, create feature branches for each major part.
+- **Database Design:**  
+	All migration files, seeders, relationships in models.
+- **CRUD Operations:**  
+	Controllers and Blade views for create, read, update, delete.
+- **Core Models & Logic:**  
+	All model files in `app/Models/`, business logic in controllers.
+- **UI/UX:**  
+	All Blade views, CSS, JS.
+- **Authentication & Authorization:**  
+	Auth controllers, middleware, user roles in models and migrations.
+- **Bonus Features:**  
+	Any extra functionality (e.g., notifications, reviews, support tickets).
+
+## 5. Presentation Prep
+
+- Test your setup and database before demo.
+- Make sure your branch is merged and up-to-date.
+- Be ready to explain your files and contributions.
+
+---
+
+**This process ensures each team member’s contribution is visible in the git commit history and meets the rubric requirements for distributed work.**
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -53,6 +160,109 @@ In order to ensure that the Laravel community is welcoming to all, please review
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+
+# Turf Bila Worry – Team Setup & Work Distribution
+
+## 1. Project Setup (All Collaborators)
+- Clone the new repository.
+- Copy all files from the current project into the new repo folder.
+- Run:
+	```bash
+	composer install
+	npm install && npm run build
+	cp .env.example .env
+	php artisan key:generate
+	```
+- Update `.env` with your local database credentials:
+	```
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=your_db_name
+	DB_USERNAME=your_db_user
+	DB_PASSWORD=your_db_password
+	```
+- Create a local MySQL database with the name you set above.
+- Run migrations:
+	```bash
+	php artisan migrate
+	```
+- (Optional) Seed the database:
+	```bash
+	php artisan db:seed
+	```
+- Start the server:
+	```bash
+	php artisan serve
+	```
+
+## 2. Work Distribution & File Responsibilities
+
+### Mitchell & Yvonne – Backend Development
+- **User Authentication:**  
+	Files: `app/Http/Controllers/Auth/`, `resources/views/auth/`, `app/Models/User.php`, `database/migrations/*users*`
+- **Booking Flow:**  
+	Files: `app/Http/Controllers/BookingController.php`, `app/Models/Booking.php`, `database/migrations/*bookings*`, `resources/views/bookings.blade.php`
+- **Payment Integration (Mobile Money):**  
+	Files: `app/Http/Controllers/PaymentController.php`, `app/Models/Payment.php`, `database/migrations/*payments*`, `resources/views/payments.blade.php`
+- **Push:** All backend logic, migrations, and related Blade views.
+
+### Mahir & Kisiwani – Frontend Development
+- **UI/UX for Web:**  
+	Files: `resources/views/home.blade.php`, `resources/views/turfs.blade.php`, `resources/views/layouts/`, `public/css/app.css`, `resources/js/app.js`
+- **Search / Listing / Availability Display:**  
+	Files: `app/Http/Controllers/TurfController.php`, `app/Models/Turf.php`, `resources/views/turfs.blade.php`
+- **Push:** All frontend Blade views, CSS, JS, and UI components.
+
+### Lyon – Testing, Database, Deployment
+- **Unit Testing & Usability Testing:**  
+	Files: `tests/Unit/`, `tests/Feature/`, `phpunit.xml`
+- **Database Integration:**  
+	Files: `database/migrations/`, `database/seeders/`, `app/Models/`
+- **Performance & Reliability:**  
+	Files: `config/`, `app/Providers/`
+- **Deployment & Maintenance Plan:**  
+	Files: `README.md` (add deployment steps), `public/.htaccess`, `artisan`, `composer.json`, `package.json`
+- **Push:** All test files, seeders, deployment scripts, and documentation.
+
+## 3. Rubric Coverage Checklist
+
+- **Laravel Setup:**  
+	`.env.example`, `.env`, `composer.json`, `package.json`, `artisan`, `config/`
+- **GitHub Collaboration:**  
+	Commit regularly, use descriptive messages, create feature branches for each major part.
+- **Database Design:**  
+	All migration files, seeders, relationships in models.
+- **CRUD Operations:**  
+	Controllers and Blade views for create, read, update, delete.
+- **Core Models & Logic:**  
+	All model files in `app/Models/`, business logic in controllers.
+- **UI/UX:**  
+	All Blade views, CSS, JS.
+- **Authentication & Authorization:**  
+	Auth controllers, middleware, user roles in models and migrations.
+- **Bonus Features:**  
+	Any extra functionality (e.g., notifications, reviews, support tickets).
+
+## 4. How to Push Your Work
+
+- Only push the files you are responsible for (see above).
+- Use feature branches named after your task (e.g., `feature/auth-backend`, `feature/ui-frontend`, `feature/testing`).
+- Make regular, meaningful commits with clear messages.
+- After finishing your part, open a pull request for review.
+
+## 5. Presentation Prep
+
+- Test your setup and database before demo.
+- Make sure your branch is merged and up-to-date.
+- Be ready to explain your files and contributions.
+
+---
+
+**Each team member should copy only their assigned files into the new repo, commit, and push. This ensures clear ownership and meets the rubric requirements.**
+
+For help, open an issue or contact the repo owner.
 
 ## License
 
